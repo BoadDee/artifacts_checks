@@ -1,0 +1,43 @@
+name: wfA
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+
+    paths:
+      - 'webAppcode/**'
+      - 'github/workflows/workflowA.yml'
+
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+      - feature/*
+
+permissions:
+  contents: read
+  pull-requests: write
+  id-token: write
+  issues: write
+  checks: write
+
+jobs:
+  jobA:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+
+  deploy:
+    needs: jobA
+    uses: ./.github/workflows/workflowAa.yml
