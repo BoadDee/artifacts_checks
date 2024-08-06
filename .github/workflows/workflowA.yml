@@ -39,6 +39,6 @@ jobs:
           name: my-artifact
           path: ${{ github.workspace }}/webAppcode
 
-  deploy:
-    needs: jobA
-    uses: ./.github/workflows/workflowAa.yml
+  # deploy:
+  #   needs: jobA
+  #   uses: ./.github/workflows/workflowAa.yml
