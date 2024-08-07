@@ -9,6 +9,8 @@ on:
     paths:
       - '.github/workflows/workflowB.yml'
 
+  workflow_call:
+
   workflow_dispatch:
   pull_request:
     branches:
