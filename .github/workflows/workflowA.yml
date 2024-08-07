@@ -23,7 +23,6 @@ permissions:
   issues: write
   checks: write
   
-
 jobs:
   jobA:
     runs-on: ubuntu-latest
