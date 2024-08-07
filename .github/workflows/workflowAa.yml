@@ -33,7 +33,7 @@ jobs:
           path: ${{ github.workspace }}/webAppcode
           github_token: ${{ github.token }}
           repo: ${{ github.repository }}
-          workflow: wfB.yml
+          workflow: workflowB.yml
           
 
       
