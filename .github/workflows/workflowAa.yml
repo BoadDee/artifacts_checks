@@ -27,7 +27,7 @@ jobs:
       #     run-id: 10275847165
 
       - name: Download artifact
-        uses: dawidd6/action-download-artifact@v4
+        uses: dawidd6/action-download-artifact@v6
         with:
           name: my-artifact1
           github_token: ${{ github.token }}
