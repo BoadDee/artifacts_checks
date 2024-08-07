@@ -17,7 +17,6 @@ on:
       - main
       - feature/*
 
-
 permissions:
   contents: read
   id-token: write

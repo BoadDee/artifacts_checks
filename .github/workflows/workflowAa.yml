@@ -32,6 +32,7 @@ jobs:
           name: my-artifact1
           github_token: ${{ github.token }}
           repo: ${{ github.repository }}
+          workflow: wfB.yml
           run_number: 4
 
       
