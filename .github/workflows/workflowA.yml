@@ -9,6 +9,7 @@ on:
     paths:
       - 'webAppcode/**'
       - '.github/workflows/workflowA.yml'
+      - '.github/workflows/workflowB.yml'
 
   workflow_dispatch:
   pull_request:
@@ -42,4 +43,3 @@ jobs:
   deploy:
     uses: ./.github/workflows/workflowAa.yml
     needs: jobA
-    
