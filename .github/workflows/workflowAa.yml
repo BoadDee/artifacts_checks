@@ -19,9 +19,10 @@ jobs:
           name: my-artifact
 
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: dawidd6/action-download-artifact@v6
         with:
           name: my-artifact1
+          run-id: 10275847165
 
       
 
