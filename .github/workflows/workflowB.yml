@@ -1,0 +1,36 @@
+name: wfB
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+
+    paths:
+      - '.github/workflows/workflowB.yml'
+
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+      - feature/*
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  jobA:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Run a one-line script
+        run: echo Hello, People!
+
+      - name: upload-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact1
+          path: ${{ github.workspace }}/webAppcode
