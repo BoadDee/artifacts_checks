@@ -30,6 +30,7 @@ jobs:
         uses: dawidd6/action-download-artifact@v4
         with:
           name: my-artifact1
+          path: ${{ github.workspace }}/webAppcode
           github_token: ${{ github.token }}
           repo: ${{ github.repository }}
           workflow: wfB.yml

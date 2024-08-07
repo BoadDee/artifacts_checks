@@ -17,14 +17,12 @@ on:
       - main
       - feature/*
 
-
 permissions:
   contents: read
   id-token: write
   pull-requests: write
   issues: write
   checks: write
-  actions: read
   
 jobs:
   jobA:
