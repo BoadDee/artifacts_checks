@@ -1,11 +1,7 @@
 
 name: deploys
 on:
-  push:
-    branches:
-      - main
-      - feature/*
-
+  workflow_call:
 
 permissions:
   contents: read
