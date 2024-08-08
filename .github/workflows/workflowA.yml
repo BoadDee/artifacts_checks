@@ -46,7 +46,7 @@ jobs:
 
       - name: test Variables
         run: |
-          cat ${{setuppath}}/${{config.model_name}}
+          cat ${{env.setuppath}}/${{config.model_name}}
       
       - name: Run a one-line script
         run: echo Hello, world!
