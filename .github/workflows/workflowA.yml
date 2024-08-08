@@ -44,9 +44,9 @@ jobs:
             echo "${PREFIX}${sanitized_key}=${value}" >> $GITHUB_ENV
           done < <(jq -r 'to_entries|map(\"\(.key)=\(.value|tostring)\")|.[]' $JSON_FILE)
 
-      - name: test Variables
-        run: |
-          cat ${{env.setuppath}}/${{config.model_name}}
+      # - name: test Variables
+      #   run: |
+      #     cat ${{env.setuppath}}/${{config.model_name}}
       
       - name: Run a one-line script
         run: echo Hello, world!
