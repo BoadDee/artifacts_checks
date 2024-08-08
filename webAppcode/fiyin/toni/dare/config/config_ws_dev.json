@@ -1,0 +1,7 @@
+{
+    "subscription_id": "00000000-0000-0000-0000-000000000000",
+    "resource_group": "dare-rg",
+    "workspace_name": "dare-ws",
+    "model_name": "fmc_model",
+    "model_version": "1"
+}

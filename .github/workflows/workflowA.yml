@@ -17,6 +17,9 @@ on:
       - main
       - feature/*
 
+env:
+  setuppath: 'webAppcode/fiyin/dare/config'
+  configfile: 'config_ws_dev.json'
 
 permissions:
   contents: read
@@ -31,6 +34,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Conver json to Variables
+        run: |
+          JSON_FILE=${{ env.setuppath }}/${{ env.configfile }}
+          PREFIX="config"
+          while IFS="=" read -r key value; do
+            sanitized_key=$(echo $key | tr '[:lower:]' '[:upper:]'| tr -cd '[:alnum:]_')
+            echo "${PREFIX}${sanitized_key}=${value}" >> $GITHUB_ENV
+          done < <(jq -r 'to_entries|map(\"\(.key)=\(.value|tostring)\")|.[]' $JSON_FILE)
+
+      - name: test Variables
+        run: |
+          cat ${{setuppath}}/${{config.model_name}}
       
       - name: Run a one-line script
         run: echo Hello, world!
