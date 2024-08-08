@@ -18,7 +18,7 @@ on:
       - feature/*
 
 env:
-  setuppath: 'webAppcode/fiyin/dare/config'
+  setuppath: 'webAppcode/fiyin/toni/dare/config'
   configfile: 'config_ws_dev.json'
 
 permissions:
@@ -43,7 +43,7 @@ jobs:
           while IFS="=" read -r key value; do
             sanitized_key=$(echo $key | tr '[:lower:]' '[:upper:]'| tr -cd '[:alnum:]_')
             echo "${PREFIX}${sanitized_key}=${value}" >> $GITHUB_ENV
-          done < <(jq -r 'to_entries|map(\"\(.key)=\(.value|tostring)\")|.[]' $JSON_FILE)
+          done < <(jq -r "to_entries|map(\"\(.key)=\(.value|tostring)\")|.[]" $JSON_FILE)
 
       # - name: test Variables
       #   run: |
