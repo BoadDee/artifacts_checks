@@ -37,6 +37,7 @@ jobs:
 
       - name: Conver json to Variables
         run: |
+          sudo apt-get install jq
           JSON_FILE=${{ env.setuppath }}/${{ env.configfile }}
           PREFIX="config"
           while IFS="=" read -r key value; do
