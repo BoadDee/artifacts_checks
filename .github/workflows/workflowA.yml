@@ -35,6 +35,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: customtag not main
+        if: ${{ github.ref_name != 'main' }}
+        run: echo "customTag=ter-dre-level" >> GITHUB_ENV
+
+      - name: customtag main
+        if: ${{ github.ref_name == 'main' }}
+        run: echo "customTag=maindre-main" >> GITHUB_ENV
+
+      - name: use customtag
+        run: echo ${{ env.customTag }}
+
       - name: Conver json to Variables
         run: |
           sudo apt-get install jq
